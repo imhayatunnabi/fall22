@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\TestController;
+use App\Http\Controllers\backend\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,9 @@ use App\Http\Controllers\backend\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/admin-dashboard',[DashboardController::class,'dashboard']);
+    return view('backend.pages.analytics');
+})->name('admin');
+Route::get('/dashboard-admin',[DashboardController::class,'dashboard'])->name('dashboard');
+Route::get('/analytics-admin',[DashboardController::class,'anaytics'])->name('analytics');
+Route::get('/test-admin',[TestController::class,'test'])->name('test');
+Route::get('/category/list',[CategoryController::class,'list'])->name('categoryList');

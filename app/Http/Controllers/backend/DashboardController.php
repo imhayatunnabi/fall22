@@ -12,4 +12,7 @@ class DashboardController extends Controller
         return view('backend.master');
 
     }
+    public function anaytics(){
+        return view('backend.pages.analytics');
+    }
 }
