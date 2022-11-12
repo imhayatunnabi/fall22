@@ -21,5 +21,6 @@ Route::get('/', function () {
 })->name('admin');
 Route::get('/dashboard-admin',[DashboardController::class,'dashboard'])->name('dashboard');
 Route::get('/analytics-admin',[DashboardController::class,'anaytics'])->name('analytics');
-Route::get('/test-admin',[TestController::class,'test'])->name('test');
 Route::get('/category/list',[CategoryController::class,'list'])->name('categoryList');
+Route::get('/create-category',[CategoryController::class,'createForm'])->name('category.form');
+Route::get('/update-category',[CategoryController::class,'updateForm'])->name('category.update');

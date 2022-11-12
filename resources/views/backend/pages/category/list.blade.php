@@ -1,5 +1,10 @@
 @extends('backend.master')
 @section('content')
+<div class="container">
+    <div class="mx-auto">
+        <a href="{{ route('category.form') }}" class="btn btn-primary">Create Category</a>
+    </div>
+</div>
 <h1>Category List</h1>
 <table class="table">
   <thead>
