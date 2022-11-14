@@ -21,6 +21,12 @@
                 <span>Category</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{route('subcategory.list')}}">
+                <i class="bi bi-grid"></i>
+                <span>Sub Category</span>
+            </a>
+        </li>
 
     </ul>
 

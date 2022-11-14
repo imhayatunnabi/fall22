@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\TestController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\SubcategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::get('/analytics-admin',[DashboardController::class,'anaytics'])->name('an
 Route::get('/category/list',[CategoryController::class,'list'])->name('categoryList');
 Route::get('/create-category',[CategoryController::class,'createForm'])->name('category.form');
 Route::get('/update-category',[CategoryController::class,'updateForm'])->name('category.update');
+
+Route::get('/subcategory-list',[SubcategoryController::class,'list'])->name('subcategory.list');
+Route::get('/subcategory-create',[SubcategoryController::class,'create'])->name('subcategory.create');
