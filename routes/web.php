@@ -24,6 +24,7 @@ Route::get('/dashboard-admin',[DashboardController::class,'dashboard'])->name('d
 Route::get('/analytics-admin',[DashboardController::class,'anaytics'])->name('analytics');
 Route::get('/category/list',[CategoryController::class,'list'])->name('categoryList');
 Route::get('/create-category',[CategoryController::class,'createForm'])->name('category.form');
+Route::post('/create-category-submit',[CategoryController::class,'create'])->name('category.create');
 Route::get('/update-category',[CategoryController::class,'updateForm'])->name('category.update');
 
 Route::get('/subcategory-list',[SubcategoryController::class,'list'])->name('subcategory.list');
