@@ -29,3 +29,4 @@ Route::get('/update-category',[CategoryController::class,'updateForm'])->name('c
 
 Route::get('/subcategory-list',[SubcategoryController::class,'list'])->name('subcategory.list');
 Route::get('/subcategory-create',[SubcategoryController::class,'create'])->name('subcategory.create');
+Route::post('/subcategory-post',[SubcategoryController::class,'subCategoryCreate'])->name('subcategory.post');
