@@ -24,4 +24,9 @@ class SubcategoryController extends Controller
         ]);
         return back();
     }
+    public function delete($id){
+        // dd($id);
+        Subcategory::find($id)->delete();
+        return back();
+    }
 }
