@@ -18,6 +18,10 @@ class SubcategoryController extends Controller
     }
     public function subCategoryCreate(Request $request ){
         // dd($request->all());
+        $request->validate([
+            'subcategory_name'=>'required',
+            'subcategory_details'=>'required'
+        ]);
         Subcategory::create([
             'subcategory_name'=>$request->subcategory_name,
             'subcategory_details'=>$request->subcategory_details,
@@ -35,6 +39,10 @@ class SubcategoryController extends Controller
     }
     public function update(Request $request,$id){
         // dd($request->all());
+        $request->validate([
+            'subcategory_name'=>'required|alpha',
+            'subcategory_details'=>'required'
+        ]);
         $subcategory = Subcategory::find($id);
         $subcategory->update([
             'subcategory_name'=>$request->subcategory_name,
