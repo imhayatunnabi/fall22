@@ -32,3 +32,5 @@ Route::get('/subcategory-create',[SubcategoryController::class,'create'])->name(
 Route::post('/subcategory-post',[SubcategoryController::class,'subCategoryCreate'])->name('subcategory.post');
 // subcategory delete
 Route::get('/subcategory-delete/{id}',[SubcategoryController::class,'delete'])->name('subcategory.delete');
+Route::get('/subcategory-update/{id}',[SubcategoryController::class,'updateForm'])->name('subcategory.updateForm');
+Route::put('/subcategory-update-submit/{id}',[SubcategoryController::class,'update'])->name('subcategory.update');

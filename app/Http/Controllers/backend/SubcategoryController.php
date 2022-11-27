@@ -22,11 +22,25 @@ class SubcategoryController extends Controller
             'subcategory_name'=>$request->subcategory_name,
             'subcategory_details'=>$request->subcategory_details,
         ]);
-        return back();
+        return redirect()->route('subcategory.list')->with('success','subcategory created successfully');
     }
     public function delete($id){
         // dd($id);
         Subcategory::find($id)->delete();
-        return back();
+        return back()->with('danger',' ooopps !!! subcategory deleted');
+    }
+    public function updateForm($id){
+        $subcategory = Subcategory::find($id);
+        return view('backend.pages.subCategory.updateForm',compact('subcategory'));
+    }
+    public function update(Request $request,$id){
+        // dd($request->all());
+        $subcategory = Subcategory::find($id);
+        $subcategory->update([
+            'subcategory_name'=>$request->subcategory_name,
+            'subcategory_details'=>$request->subcategory_details
+        ]);
+        return redirect()->route('subcategory.list')->with('success','Subcategory Updated Successfully');
+
     }
 }
