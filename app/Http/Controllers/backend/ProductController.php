@@ -26,5 +26,24 @@ class ProductController extends Controller
         ]);
         return redirect()->route('product.list');
     }
+    public function delete($id){
+       $product=  Product::find($id)->delete();
+       return back();
+    }
+    // product edit section
+    public function editForm($id){
+        $product = Product::find($id);
+        return view('backend.pages.product.edit',compact('product'));
+    }
+    public function editFormSubmit(Request $request,$id){
+        $product = Product::find($id)->update([
+            'product_name'=>$request->product_name,
+            'product_details'=>$request->product_details,
+            'product_price'=>$request->product_price,
+            'product_weight'=>$request->product_weight,
+            'product_quantity'=>$request->product_quantity
+        ]);
+        return back();
+    }
 
 }

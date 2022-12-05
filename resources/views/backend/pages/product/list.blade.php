@@ -17,6 +17,7 @@
                     <th scope="col">Product Price</th>
                     <th scope="col">Product quantity</th>
                     <th scope="col">Product weight</th>
+                    <th scope="col">Edit/Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,10 @@
                     <td>{{ $product->product_price }}</td>
                     <td>{{ $product->product_quantity }}</td>
                     <td>{{ $product->product_weight }}</td>
+                    <td>
+                        <a href="{{ route('product.delete',$product->id) }}" class="btn btn-danger">Delete</a>
+                        <a href="{{ route('product.edit.form',$product->id) }}" class="btn btn-success">Edit</a>
+                    </td>
                 </tr>
                 @endforeach
 

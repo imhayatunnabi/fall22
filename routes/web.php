@@ -51,3 +51,6 @@ Route::put('/subcategory-update-submit/{id}',[SubcategoryController::class,'upda
 Route::get('/product-list',[ProductController::class,'list'])->name('product.list');
 Route::get('/product-create-form',[ProductController::class,'createForm'])->name('product.create.form');
 Route::post('/product-create-submit',[ProductController::class,'createSubmit'])->name('product.create.submit');
+Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+Route::get('/product/edit-form/{id}',[ProductController::class,'editForm'])->name('product.edit.form');
+Route::put('/product/edit-form-submit/{id}',[ProductController::class,'editFormSubmit'])->name('product.edit.form.submit');
