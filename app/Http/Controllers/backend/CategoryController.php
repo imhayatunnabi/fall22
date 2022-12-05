@@ -9,7 +9,8 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function list(){
-        return view('backend.pages.category.list');
+        $categories = Category::all();
+        return view('backend.pages.category.list',compact('categories'));
     }
     public function createForm(){
         return view('backend.pages.category.create');
@@ -23,7 +24,16 @@ class CategoryController extends Controller
          ]);
          return redirect()->back();
     }
-    public function updateForm(){
-        return view('backend.pages.category.update');
+    public function updateForm($id){
+        $category = Category::find($id);
+        return view('backend.pages.category.update',compact('category'));
+    }
+    public function update(Request $request,$id){
+        $category = Category::find($id);
+        $category->update([
+            'category_name'=>$request->category_name,
+            'category_details'=>$request->category_details
+        ]);
+        return back();
     }
 }

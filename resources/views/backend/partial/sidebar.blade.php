@@ -27,6 +27,12 @@
                 <span>Sub Category</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{route('product.list')}}">
+                <i class="bi bi-grid"></i>
+                <span>Product</span>
+            </a>
+        </li>
 
     </ul>
 

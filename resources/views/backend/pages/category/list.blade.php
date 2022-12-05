@@ -7,33 +7,25 @@
 </div>
 <h1>Category List</h1>
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Category Details</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($categories as $category )
+        <tr>
+            <th scope="row">{{ $category->id }}</th>
+            <td>{{ $category->category_name }}</td>
+            <td>{{ $category->category_details }}</td>
+            <td>
+                <a href="{{ route('category.update',$category->id) }}" class="btn btn-primary">Edit</a>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
 </table>
 @endsection
