@@ -4,7 +4,7 @@
     <h4 class="text-center">Product Create Form</h4>
 </div>
 <div class="container">
-    <form action="{{ route('product.create.submit') }}" method="post">
+    <form action="{{ route('product.create.submit') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="" class="form-label">Product Name</label>
@@ -28,6 +28,11 @@
         <div class="mb-3">
             <label for="" class="form-label">Product Quantity</label>
             <input type="number" class="form-control" name="product_quantity" id="" aria-describedby="helpId"
+                placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Product Image</label>
+            <input type="file" class="form-control" name="product_image" id="" aria-describedby="helpId"
                 placeholder="">
         </div>
         <button type="submit" class="btn btn-success">Create</button>

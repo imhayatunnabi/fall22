@@ -13,6 +13,7 @@
                 <tr>
                     <th scope="col">Product Id</th>
                     <th scope="col">Product Name </th>
+                    <th scope="col">Product Image </th>
                     <th scope="col">Product Details</th>
                     <th scope="col">Product Price</th>
                     <th scope="col">Product quantity</th>
@@ -25,6 +26,7 @@
                 <tr class="">
                     <td scope="row">{{ $product->id }}</td>
                     <td>{{ $product->product_name}}</td>
+                    <td><img width="70px" src="{{ url('/uploads/product/',$product->product_image) }}" alt="" srcset=""></td>
                     <td>{{ $product->product_details }}</td>
                     <td>{{ $product->product_price }}</td>
                     <td>{{ $product->product_quantity }}</td>
