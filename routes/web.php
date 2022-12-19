@@ -27,7 +27,7 @@ Route::post('/reg-form-submit',[AuthController::class,'regFormSubmit'])->name('r
 Route::get('/login-form',[AuthController::class,'loginForm'])->name('login');
 Route::post('/login-form-submit',[AuthController::class,'loginFormSubmit'])->name('loginFormSubmit');
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'checkAdmin'],function(){
 
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
