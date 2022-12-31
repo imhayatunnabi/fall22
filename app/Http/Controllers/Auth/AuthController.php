@@ -36,7 +36,7 @@ class AuthController extends Controller
         if($authentication){
             return to_route('dashboard')->with('success','login successfull');
         }else{
-            return to_route('loginForm');
+            return to_route('login');
         }
     }
     public function logout(){

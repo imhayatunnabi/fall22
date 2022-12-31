@@ -6,9 +6,19 @@
 <div class="container">
     <form action="{{ route('product.create.submit') }}" method="post" enctype="multipart/form-data">
         @csrf
+
         <div class="mb-3">
             <label for="" class="form-label">Product Name</label>
             <input type="text" class="form-control" name="product_name" id="" aria-describedby="helpId" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Category Name</label>
+            <select name="category_id" id="" class="form-control">
+                @foreach ($categories as $item)
+                <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Product Details</label>
@@ -30,10 +40,10 @@
             <input type="number" class="form-control" name="product_quantity" id="" aria-describedby="helpId"
                 placeholder="">
         </div>
+        {{-- @dd($categories); --}}
         <div class="mb-3">
             <label for="" class="form-label">Product Image</label>
-            <input type="file" class="form-control" name="product_image" id="" aria-describedby="helpId"
-                placeholder="">
+            <input type="file" class="form-control" name="product_image" id="" aria-describedby="helpId" placeholder="">
         </div>
         <button type="submit" class="btn btn-success">Create</button>
     </form>

@@ -18,6 +18,15 @@
                 placeholder="" value="{{ $product->product_details }}">
         </div>
         <div class="mb-3">
+            <label for="" class="form-label">Category Name</label>
+            <select name="category_id" id="" class="form-control">
+                @foreach ($categories as $item)
+                <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="" class="form-label">Product Price</label>
             <input type="number" class="form-control" name="product_price" id="" aria-describedby="helpId"
                 placeholder="" value="{{ $product->product_price }}">
